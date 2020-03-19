@@ -1,0 +1,22 @@
+// weapp
+page {
+  height: 100%;
+  // overflow-y: scroll;
+  background: #f6f6f6;
+  font-size: 26px;
+  overflow: hidden;
+}
+view,
+text,
+scroll-view {
+  box-sizing: border-box;
+}
+
+button {
+  &:after {
+    display: none;
+  }
+}
+
+
+

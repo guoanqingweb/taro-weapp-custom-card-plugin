@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "card-el": "../../components/card-el/index"
+  },
+  "disableScroll": true
+}

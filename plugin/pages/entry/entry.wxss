@@ -1,0 +1,108 @@
+
+.entry {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  padding: 10% 0 0; }
+  .entry .skrink, .entry .entry-gallery, .entry .entry-title, .entry .entry-thumb, .entry .entry-footer {
+    width: 100%;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
+  .entry-gallery {
+    overflow: hidden;
+    padding: 15% 0; }
+    .entry-gallery_img {
+      display: block;
+      margin: 0 auto;
+      border-radius: 15rpx;
+      -webkit-box-shadow: 0 5rpx 30rpx #ccc;
+              box-shadow: 0 5rpx 30rpx #ccc; }
+  .entry-title {
+    text-align: center; }
+  .entry-thumb {
+    padding: 0 0 5%; }
+    .entry-thumb__scrollview {
+      white-space: nowrap; }
+      .entry-thumb__scrollview .thumb-item {
+        display: inline-block;
+        width: 200rpx;
+        height: 120rpx;
+        margin: 0 10rpx;
+        position: relative;
+        padding: 10PX; }
+        .entry-thumb__scrollview .thumb-item_img {
+          -webkit-flex-shrink: 0;
+              -ms-flex-negative: 0;
+                  flex-shrink: 0;
+          width: 180rpx;
+          height: 100rpx;
+          display: block;
+          border-radius: 8rpx;
+          -webkit-box-sizing: border-box;
+                  box-sizing: border-box; }
+          .entry-thumb__scrollview .thumb-item_img.active {
+            border: 5rpx solid #643E28; }
+  .entry-footer {
+    text-align: center; }
+    .entry-footer_btn {
+      background: #643E28;
+      display: inline-block;
+      color: #fff;
+      width: 400rpx;
+      height: 80rpx;
+      line-height: 80rpx;
+      font-size: 32rpx;
+      border-radius: 40rpx; }
+      .entry-footer_btn.disabled {
+        opacity: .3;
+        background: #000;
+        pointer-events: none; }
+
+.card__tips {
+  text-align: center;
+  padding: 40rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .card__tips-text {
+    color: #643E28;
+    line-height: 40rpx;
+    display: inline-block;
+    text-decoration: underline;
+    padding: 0 40rpx; }

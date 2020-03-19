@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "定制卡片",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
+  },
+  "plugins": {
+    "myPlugin": {
+      "version": "dev",
+      "provider": "wx374e720be6f29030"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

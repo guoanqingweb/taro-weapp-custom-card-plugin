@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "card-el": "../card-el/index"
+  }
+}

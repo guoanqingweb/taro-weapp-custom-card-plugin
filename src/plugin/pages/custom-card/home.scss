@@ -1,0 +1,224 @@
+@import '@styles/conf';
+
+.home {
+  @include flex($d: column, $j-c: space-between);
+  // padding-bottom: 120px;
+  overflow: hidden;
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .skrink {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &-gallery {
+    @extend .skrink;
+    padding-top: 15%;
+    position: relative;
+
+    &__wrap {
+      position: relative;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 40px #ccc;
+      z-index: 99;
+    }
+
+    .mask {
+      @include mask($alpha:0);
+    }
+  }
+
+  &__tips {
+    @extend .skrink;
+    padding: 30px 0 0;
+    text-align: center;
+  }
+
+  &__slider {
+    @extend .skrink;
+    @include flex($f-w: nowrap, $a-i: center);
+    padding: 0 10%;
+    width: 100%;
+    flex-shrink: 0;
+    transition: .15s;
+
+    .slider {
+      flex-grow: 1;
+    }
+
+    Text {
+      color: #666;
+    }
+
+  }
+
+  &-bot {
+    @extend .skrink;
+    position: relative;
+  }
+
+  &__thumb {
+    position: relative;
+    z-index: 9;
+
+    &-tab {
+      height: 100px;
+      white-space: nowrap;
+      background: #fff;
+      line-height: 100px;
+      @include hairline-bottom;
+
+      Text {
+        display: inline-block;
+        padding: 0 40px;
+        font-size: 28px;
+        opacity: .5;
+        transition: opacity .35s;
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+
+    &-con {
+      white-space: nowrap;
+
+      &-wrap {
+        display: inline-block;
+
+        .thumb_item {
+          float: left;
+          @include flex($a-i: center, $j-c: center)
+        }
+
+        Image {
+          margin: 0 auto;
+        }
+      }
+    }
+
+  }
+
+  &-bot-text {
+    position: absolute;
+    top: 100px;
+    width: 100%;
+    left: 0;
+    z-index: 99;
+    height: 145PX;
+    background: #fff;
+    .text-wrap {
+      &__input {
+        width: 100%;
+        background: #fff;
+        position: absolute;
+        top: -100px;
+        left: 0;
+        height: 100px;
+        @include flex($f-w:nowrap,$j-c: space-between,$a-i:center);
+        Input {
+          height: 80px;
+          padding:0 40px;
+          flex-grow: 1
+        }
+        text {
+          font-size: 26px;
+          color: $vi;
+          flex-shrink: 0;
+          @include hairline-left();
+          text-align: center;
+          padding: 0 40px;
+        }
+      }
+      &__color {
+        width: 100%;
+        @include flex($f-w: nowrap);
+        text{
+          flex-grow: 1;
+          height: 25PX;
+        }
+      }
+      &__swiper{
+        background: #fff;
+        width: 100%;
+        padding: 10PX 0;
+        position: relative;
+        text-align: center;
+        line-height: 40PX;
+        font-weight: bold;
+        
+        swiper{
+          opacity: 0;
+        animation: fadeIn .35s .1s forwards;
+        }
+        &::after,&::before{
+          content: '';
+          position: absolute;
+          z-index: 99;
+          height: 50PX;
+          width: 100%;
+          left: 0;
+          top: 0;
+          background: #fff;
+          opacity: .8;
+          // pointer-events: none;
+        }
+        text{
+          width: 100%;
+          display: block;
+        }
+        &::before {
+          border-bottom: 1px solid #ccc;
+        }
+        &::after {
+          top: auto;
+          bottom: 0;
+          border-top: 1px solid #ccc;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    @extend .skrink;
+    padding: 20px 0;
+    height: 120px;
+    text-align: center;
+
+    &-btn {
+      background: $vi;
+      display: inline-block;
+      color: #fff;
+      width: 400px;
+      height: 80px;
+      line-height: 80px;
+      font-size: 32px;
+      border-radius: 40px;
+
+      &.disabled {
+        opacity: .3;
+        background: #000;
+        pointer-events: none;
+      }
+    }
+
+  }
+}
+.offscreen {
+  position: 'fixed';
+  left: '200%';
+  top: '200%';
+  z-index: 999;
+}
+@keyframes fadeIn{
+  from {
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}

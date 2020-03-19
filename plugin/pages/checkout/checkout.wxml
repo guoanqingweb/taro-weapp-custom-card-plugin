@@ -1,0 +1,37 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="checkout" style="{{anonymousState__temp}}">
+        <view class="checkout-gallery">
+            <view class="gallery-wrap">
+                <view class="{{'logo-wrap ' + (logoState ? 'show' : '') + ' '}}">
+                    <view class="logo-wrap_img">
+                        <image class="logo" src="https://wx.21cake.com/themes/wap/img/logo.png"></image>
+                    </view>
+                    <view class="logo-wrap_text"><text class="name">21cake</text><text class="desc">21cake礼品卡</text>
+                    </view>
+                </view>
+                <image src="{{cardTemPath}}" class="checkout-gallery_img" style="{{anonymousState__temp2}}"></image>
+            </view>
+        </view>
+        <view class="checkout-tips" bindtap="anonymousFunc0">
+            <view class="{{'logo-switch ' + (logoState ? 'show' : '') + ' '}}">
+                <nyk-icon compid="{{$compid__2}}"></nyk-icon>
+            </view>预览在微信卡包内的样式</view>
+        <view class="checkout-footer">
+            <button bindtap="selectCardBack" class="checkout-footer_btn">赠送好友</button>
+            <button bindtap="createCanvasImg" class="{{'checkout-footer_btn save ' + (saveState ? 'disabled' : '')}}">{{'' + (saveState ? '已保存' : '保存分享')}}</button>
+        </view>
+        <block wx:if="{{showModal}}">
+            <view class="modal">
+                <view class="modal-mask"></view>
+                <view class="modal-content">
+                    <nyk-icon compid="{{$compid__3}}"></nyk-icon>
+                    <image src="{{saveImgPath}}" mode="scaleToFill" class="modal-content_img" style="{{anonymousState__temp4}}"></image>
+                    <view class="modal-content_text">已保存至相册,记得分享哦！</view>
+                </view>
+            </view>
+        </block>
+        <view class="offscreen">
+            <canvas canvas-id="canvas" style="{{anonymousState__temp5}}"></canvas>
+        </view>
+    </view>
+</block>

@@ -1,0 +1,3 @@
+<block wx:if="{{$taroCompReady}}">
+    <button bindtap="selectCardBack">去首页</button>
+</block>

@@ -1,0 +1,115 @@
+@import './harline';
+
+//文本超出
+@mixin textline($num: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if($num == 1){
+    white-space: nowrap;
+  }@else{
+    display: -webkit-box;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+  }
+}
+
+//flex
+@mixin flex($f-w: wrap, $d: row, $j-c: flex-start, $a-i: flex-start) {
+  display: flex;
+  flex-wrap: $f-w;
+  flex-direction: $d;
+  justify-content: $j-c;
+  align-items: $a-i;
+}
+
+// flex下图片
+@mixin img($w, $h: auto) {
+  flex-shrink: 0;
+  width: $w;
+  height: $h;
+  display: block;
+}
+
+// 设置placeholder 颜色
+@mixin placeholder($color: $color-grey-3) {
+  &::placeholder {
+    color: $color;
+  }
+}
+
+// 遮罩
+@mixin mask($color:#000,$alpha: 0.6, $index: 9) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba($color: $color, $alpha: $alpha);
+  z-index: 9;
+}
+
+
+
+//水平垂直居中
+@mixin middles() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%)
+}
+
+// 按钮点击区域拓展
+@mixin extend-click($v: -10px, $h: -10px) {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: $v;
+    bottom: $v;
+    left: $h;
+    right: $h;
+  }
+}
+
+// 购物车按钮
+@mixin shopcar ($w:38px, $h:38px, $r:10px, $b:10px, $z:999) {
+  @include extend-click;
+  position: absolute;
+  width: $w;
+  height: $h;
+  right: $r;
+  bottom: $b;
+  z-index: $z;
+
+  &_img {
+    @include img(38px, 38px)
+  }
+}
+@mixin pureButton {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: 0;
+  border: none;
+  color: inherit;
+  background: inherit;
+  overflow: auto;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &.button-hover {
+    color: inherit;
+    background: inherit;
+  }
+
+  &::after {
+    content: none;
+    display: none;
+  }
+}

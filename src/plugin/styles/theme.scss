@@ -1,0 +1,56 @@
+@import '@styles/conf';
+//页面reset
+
+@mixin pagePublic($class) {
+  @keyframes roll {
+    from {
+        transform-origin: center;
+        transform: rotate(-360deg);
+        opacity: 1;
+    }
+  
+    to {
+        transform-origin: center;
+        transform: none;
+        opacity: 1;
+    }
+  }
+  .#{$class} {
+    position: relative;
+    overflow: hidden;
+    background: #f1f1f1;
+    &__wrap {
+      position: relative;
+      .drag-refresh {
+        
+        @include flex($d:column, $a-i: center,$j-c: space-around);
+        overflow: hidden;
+        padding-top: 20px;
+        &_icon::before{
+          width: 45px;
+          height: 45px;
+          animation: roll 1s linear infinite;
+          @include flex($a-i:center, $j-c: center);
+          color: $vi;
+        }
+        &_text {
+          font-size: 12PX;
+          color: #666
+        }
+      }
+      .drag-down{
+        width: 100%;
+        background: #f1f1f1;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #666;
+        @include flex($a-i: center, $j-c: center);
+        height: 40PX;
+        font-size: 12PX
+      }
+    }
+
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "nyk-icon": "../../components/icon/index"
+  },
+  "disableScroll": true
+}

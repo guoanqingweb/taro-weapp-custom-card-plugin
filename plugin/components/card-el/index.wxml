@@ -1,0 +1,28 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="{{className}}" style="{{anonymousState__temp}}">
+        <block>
+            <block wx:if="{{isTextType}}">
+                <view style="{{anonymousState__temp2}}" bindtap="funPrivateizzzz">{{text}}</view>
+            </block>
+            <block wx:else>
+                <image src="{{imgUrl}}" style="{{anonymousState__temp3}}" bindtap="funPrivateizzzz"></image>
+            </block>
+        </block>
+        <block wx:if="{{isSelect}}">
+            <view>
+                <view style="{{anonymousState__temp4}}" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd"></view>
+                <view style="{{anonymousState__temp5}}" bindtouchstart="sacleTouchStart" bindtouchmove="sacleTouchMove" bindtouchend="sacleTouchEnd">
+                    <nyk-icon compid="{{$compid__4}}"></nyk-icon>
+                </view>
+                <view style="{{anonymousState__temp6}}" bindtap="funPrivatejzzzz">
+                    <nyk-icon compid="{{$compid__5}}"></nyk-icon>
+                </view>
+                <block wx:if="{{isTextType}}">
+                    <view style="{{anonymousState__temp7}}" bindtap="funPrivatebazzz">
+                        <nyk-icon compid="{{$compid__6}}"></nyk-icon>
+                    </view>
+                </block>
+            </view>
+        </block>
+    </view>
+</block>

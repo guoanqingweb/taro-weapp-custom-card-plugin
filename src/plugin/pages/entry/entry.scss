@@ -1,0 +1,96 @@
+@import '@styles/conf';
+
+.entry {
+  @include flex($d: column, $j-c: space-between, $a-i: center);
+  overflow: hidden;
+  padding: 10% 0 0;
+
+  .skrink {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &-gallery {
+    @extend .skrink;
+    overflow: hidden;
+    padding: 15% 0;
+
+    &_img {
+      display: block;
+      margin: 0 auto;
+      border-radius: 15px;
+      box-shadow: 0 5px 30px #ccc;
+    }
+  }
+
+  &-title {
+    @extend .skrink;
+    text-align: center;
+  }
+
+  &-thumb {
+    @extend .skrink;
+    padding: 0 0 5%;
+
+    &__scrollview {
+      white-space: nowrap;
+
+      .thumb-item {
+        display: inline-block;
+        $w: 200px;
+        $h: 120px;
+        width: $w;
+        height: $h;
+        margin: 0 10px;
+        position: relative;
+        padding: 10PX;
+
+        &_img {
+          @include img($w - 20px, $h - 20px);
+          border-radius: 8px;
+          box-sizing: border-box;
+
+          &.active {
+            border: 5px solid $vi;
+          }
+        }
+      }
+    }
+  }
+
+  &-footer {
+    @extend .skrink;
+    text-align: center;
+
+    &_btn {
+      background: $vi;
+      display: inline-block;
+      color: #fff;
+      width: 400px;
+      height: 80px;
+      line-height: 80px;
+      font-size: 32px;
+      border-radius: 40px;
+
+      &.disabled {
+        opacity: .3;
+        background: #000;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.card__tips {
+  text-align: center;
+  padding: 40px 0;
+  @include flex($j-c: center);
+
+  &-text {
+    color: $vi;
+    line-height: 40px;
+    display: inline-block;
+    text-decoration: underline;
+    padding: 0 40px;
+  }
+}

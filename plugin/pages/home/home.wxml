@@ -1,0 +1,59 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="home" style="{{anonymousState__temp}}">
+        <view class="home-gallery">
+            <view class="mask" bindtap="anonymousFunc0"></view>
+            <view class="home-gallery__wrap" style="{{anonymousState__temp2}}">
+                <image src="{{cardCoverImg}}" style="{{anonymousState__temp3}}"></image>
+                <block wx:if="{{item.isValid}}" wx:for="{{loopArray28}}" wx:for-item="item" wx:for-index="zIndex" wx:key="idx">
+                    <card-el compid="{{item.$compid__13}}"></card-el>
+                </block>
+            </view>
+            <view class="home__tips">{{canAddEl ? '在背景上添加元素定制你的卡片' : '贴纸已满10个，不能再添加哦'}}</view>
+        </view>
+        <view class="{{'home__slider ' + (editElIndex === 0 ? 'hidden' : '')}}"><text>-180°</text>
+            <slider class="slider" min="{{-180}}" max="{{180}}" value="{{editElRotate}}" active-color="#e9e9e9" block-color="#643E28" block-size="{{20}}" bindchanging="rotateEl"></slider><text>180°</text>
+        </view>
+        <view class="home-bot">
+            <view class="home__thumb">
+                <scroll-view class="home__thumb-tab" scroll-x="{{true}}"><text class="{{idx === thumbActiveIndex ? 'active' : ''}}" bindtap="anonymousFunc2" wx:for="{{loopArray29}}" wx:for-item="item" wx:for-index="idx" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey2}}">文本</text>
+                </scroll-view>
+                <scroll-view class="home__thumb-con" style="{{anonymousState__temp8}}" scroll-x="{{true}}">
+                    <view class="home__thumb-con-wrap" style="{{anonymousState__temp9}}">
+                        <view class="thumb_item" bindtap="anonymousFunc3" style="{{item.$loopState__temp11}}" wx:for="{{loopArray30}}" wx:for-item="item" wx:for-index="idx" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey3}}">
+                            <image src="{{testImg}}" style="{{item.$loopState__temp13}}"></image>
+                        </view>
+                    </view>
+                </scroll-view>
+            </view>
+            <block wx:if="{{showTextElArea}}">
+                <view class="home-bot-text">
+                    <view class="{{'text-wrap__input ' + (showTextElInput ? '' : 'hidden')}}">
+                        <input maxlength="{{10}}" placeholder="请输入您想说的话,最多10个字符。" bindinput="handleTextElInput" value="{{elInputText}}" focus="{{showTextElInput}}" bindblur="handleTextInputBlur" bindconfirm="handleAddTextEl" />
+                        <block>
+                            <block wx:if="{{elInputText.length === 0}}"><text>取消</text>
+                            </block>
+                            <block wx:else><text bindtap="handleAddTextEl">完成</text>
+                            </block>
+                        </block>
+                    </view>
+                    <view class="text-wrap__color"><text bindtap="anonymousFunc4" style="{{item.$loopState__temp15}}" wx:for="{{loopArray31}}" wx:for-item="item" wx:for-index="idx" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey4}}"></text>
+                    </view>
+                    <view class="text-wrap__swiper">
+                        <block wx:if="{{renderSwiper}}">
+                            <swiper style="{{anonymousState__temp16}}" vertical="{{true}}" next-margin="40px" previous-margin="40px" bindchange="changeTextSwiper" current="{{textSwiperCurrent}}">
+                                <swiper-item style="{{item.$loopState__temp18}}" wx:for="{{loopArray32}}" wx:for-item="item" wx:for-index="idx"><text bindtap="anonymousFunc5" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey5}}">{{item.$original.text}}</text>
+                                </swiper-item>
+                            </swiper>
+                        </block>
+                    </view>
+                </view>
+            </block>
+        </view>
+        <view class="home__footer">
+            <button class="{{'home__footer-btn ' + (validLength === 0 ? 'disabled' : '')}}" bindtap="canvasDrawImg">生成</button>
+        </view>
+        <view class="offscreen">
+            <canvas canvas-id="canvas" style="{{anonymousState__temp19}}"></canvas>
+        </view>
+    </view>
+</block>

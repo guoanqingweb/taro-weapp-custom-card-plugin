@@ -1,0 +1,11 @@
+{
+  "publicComponents": {
+    "home_test": "components/custom-card/home"
+  },
+  "pages": {
+    "entry": "pages/entry/entry",
+    "home": "pages/home/home",
+    "checkout": "pages/checkout/checkout"
+  },
+    "main": "index.js"
+  }

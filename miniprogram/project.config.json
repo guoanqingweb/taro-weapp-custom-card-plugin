@@ -1,0 +1,29 @@
+{
+  "miniprogramRoot": "./",
+  "pluginRoot": "plugin/",
+  "compileType": "plugin",
+  "appid": "wx374e720be6f29030",
+  "projectname": "taro-weapp_plugin",
+  "description": "微信小程序插件",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "postcss": false,
+    "minified": false,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "libVersion": "2.9.4",
+  "condition": {}
+}

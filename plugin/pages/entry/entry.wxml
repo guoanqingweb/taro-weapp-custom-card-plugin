@@ -1,0 +1,23 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="entry" style="{{anonymousState__temp}}">
+        <view class="entry-gallery">
+            <image src="{{cardCoverImgs[selectIndex]}}" class="entry-gallery_img" style="{{anonymousState__temp2}}"></image>
+        </view>
+        <view class="entry__title">选择一张你喜欢的卡面背景</view>
+        <view class="entry-thumb">
+            <scroll-view scroll-x="{{true}}" class="entry-thumb__scrollview">
+                <view class="thumb-item" bindtap="anonymousFunc0" wx:for="{{loopArray12}}" wx:for-item="item" wx:for-index="idx" data-e-tap-so="this" data-e-tap-a-a="{{item._$indexKey}}">
+                    <image src="{{item.$original}}" class="{{'thumb-item_img ' + (idx === selectIndex ? 'active' : '')}}"></image>
+                    <nyk-icon compid="{{item.$compid__9}}"></nyk-icon>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="entry-footer">
+            <button bindtap="anonymousFunc1" class="entry-footer_btn">下一步</button>
+            <view class="card__tips">
+                <navigator class="card__tips-text">使用须知</navigator>
+                <navigator class="card__tips-text">隐私权条款</navigator>
+            </view>
+        </view>
+    </view>
+</block>

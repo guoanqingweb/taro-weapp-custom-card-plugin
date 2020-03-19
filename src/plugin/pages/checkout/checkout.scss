@@ -1,0 +1,167 @@
+@import '@styles/conf';
+
+.checkout {
+  @include flex($d: column, $j-c: space-around, $a-i: center);
+  overflow: hidden;
+  padding: 25% 0 0;
+
+  .skrink {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  &-gallery {
+    overflow: hidden;
+    position: relative;
+    width: 84%;
+    flex-shrink: 0;
+    box-shadow: 0 5px 30px #ccc;
+    border-radius: 20px;
+
+    &_img {
+      display: block;
+      margin: 0 auto;
+      position: relative;
+      z-index: 9;
+    }
+
+    .logo-wrap {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 99;
+      @include flex($a-i: center, $f-w: nowrap);
+      padding: 0 20px;
+      height: 100px;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: .3s ease-in-out;
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+        transition: .5s ease-in-out;
+      }
+
+      &_img {
+        width: 76px;
+        height: 76px;
+        background: #fff;
+        border-radius: 50%;
+        padding: 13px 8px;
+
+        .logo {
+          @include img(60px, 49px);
+        }
+      }
+
+      &_text {
+        color: #fff;
+        @include flex($d: column, $j-c: space-between);
+        height: 62px;
+        padding-left: 10px;
+        line-height: 1;
+        text-shadow: 0 2px 10px #ccc;
+
+        .name {
+          font-size: 28px;
+        }
+
+        .desc {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  &-tips {
+    flex-shrink: 0;
+    width: 82%;
+    margin: 0px auto 40px;
+    @include flex($f-w: nowrap, $a-i: center);
+    line-height: 1;
+
+    .logo-switch {
+      width: 40px;
+      height: 40px;
+      background: $vi;
+      margin-right: 20px;
+      border-radius: 50%;
+      opacity: .3;
+      text-align: center;
+      line-height: 40px;
+      &.show {
+        opacity: 1;
+        background: $vi;
+      }
+    }
+  }
+
+  &-footer {
+    @extend .skrink;
+    @include flex($d: column, $a-i: center);
+    padding-bottom: 10%;
+
+    &_btn {
+      background: $vi;
+      color: #fff;
+      width: 400px;
+      height: 80px;
+      line-height: 80px;
+      font-size: 32px;
+      border-radius: 40px;
+      margin: 20px 0;
+      box-sizing: border-box;
+      border: 3px solid $vi;
+      &.save {
+        background: none;
+        color: $vi;
+      }
+      &.disabled {
+        opacity: .3;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+.modal {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+
+  &-mask {
+    @include mask()
+  }
+
+  &-content {
+    @include middles();
+    z-index: 99;
+
+    &_img {
+      width: 100%;
+      display: block;
+    }
+
+    &_text {
+      width: 100%;
+      background: #fff;
+      margin-top: 40px;
+      line-height: 80px;
+      text-align: center;
+      color: $vi;
+      font-size: 30px;
+    }
+  }
+}
+
+.offscreen {
+  position: fixed;
+  left: 200%;
+  top: 200%;
+  z-index: 999;
+}
